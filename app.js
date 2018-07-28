@@ -41,4 +41,9 @@ app.use(function(err, req, res, next) {
 const mongoose = require('mongoose');
 const mongoURI = 'mongodb://angelhack:angelhack18@ds259001.mlab.com:59001/foodcoin';
 
+mongoose.connect(mongoURI)
+mongoose.Promise = global.Promise;
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 module.exports = app;
