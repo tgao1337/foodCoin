@@ -38,4 +38,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+const mongoose = require('mongoose');
+const mongoURI = 'mongodb://angelhack:angelhack18@ds259001.mlab.com:59001/foodcoin';
+
 module.exports = app;
